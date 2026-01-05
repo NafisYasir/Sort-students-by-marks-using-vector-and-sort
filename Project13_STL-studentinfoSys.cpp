@@ -65,7 +65,6 @@ int main() {
     do {
         DisplayManue();
 
-        // Fix for Menu Choice: Handles non-numeric input
         if (!(cin >> choice)) {
             cout << "Invalid input! Please enter a number (1-5)." << endl;
             cin.clear(); 
@@ -79,7 +78,6 @@ int main() {
                 string name;
 
                 cout << "Enter Student ID: ";
-                // Fix for ID: Asks again if input is not a number
                 while (!(cin >> id)) {
                     cout << "Invalid ID! Please enter a numeric ID: ";
                     cin.clear();
@@ -90,7 +88,6 @@ int main() {
                 cin >> name;
 
                 cout << "Enter Student Marks: ";
-                // Fix for Marks: Asks again if input is not a number
                 while (!(cin >> marks)) {
                     cout << "Invalid Marks! Please enter numeric marks: ";
                     cin.clear();
@@ -109,8 +106,8 @@ int main() {
             case 4: {
                 int id;
                 cout << "Enter Student ID to search: ";
-                // Fix for Search ID: Handles non-numeric search input
-                while (!(cin >> id)) {
+
+             while (!(cin >> id)) {
                     cout << "Invalid ID! Please enter a numeric ID: ";
                     cin.clear();
                     cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -128,4 +125,5 @@ int main() {
     } while (choice != 5);
 
     return 0;
+
 }
